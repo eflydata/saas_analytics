@@ -1,0 +1,4 @@
+risk_segment,user_count,percentage_of_total,avg_ltv,avg_payments,avg_days_inactive,non_paying_users
+"High Churn Risk",379,37.90,15.20,0.1,581,360
+"Medium Churn Risk",78,7.80,107.95,5.0,518,0
+"Low Churn Risk",543,54.30,4824.25,118.5,498,0

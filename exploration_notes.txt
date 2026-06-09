@@ -1,0 +1,70 @@
+SaaS Product Analytics: Feature Adoption & Retention Analysis
+
+Phase 1 - Data Exploration & Profiling
+
+-- How many unique users
+SELECT DISTINCT
+	COUNT(user_id)
+FROM users;
+-- There are 1,000 users
+
+-- How many subscriptions?
+SELECT
+	COUNT(*)
+FROM subscriptions;
+-- There are 8,424 subscriptions in total
+SELECT 
+	COUNT (status)
+FROM subscriptions
+WHERE status = "Active";
+-- 8,285 subscriptions are currently active
+
+-- How many payments have been made?
+SELECT 
+	COUNT(*)
+FROM payments;
+-- There are 5,393 payments
+
+-- What is the date range of the payment data?
+SELECT 
+	MIN(payment_date) AS first_payment_date,
+    MAX(payment_date) AS last_payment_date
+FROM payments;
+-- 2023-04-23 through 2025-04-23, a span of two years
+-- What is the date range for subscription signups?
+SELECT 
+	MIN(signup_date) AS first_signup_date,
+    MAX(signup_date) AS last_signup_date
+FROM users; 
+-- This is consistent with the payment date range, 2023-04-23 to 2025-04-22, a span of two years
+
+-- Are there any null values in key columns?
+SELECT *
+FROM users
+WHERE user_id IS NULL OR signup_date IS NULL;
+
+SELECT *
+FROM payments
+WHERE user_id IS NULL OR payment_date IS NULL or amount_paid_usd IS NULL;
+
+SELECT * 
+FROM plans 
+WHERE plan_id IS NULL OR plan_name IS NULL;
+
+SELECT * 
+FROM subscriptions
+WHERE user_id IS NULL OR plan_id IS NULL OR subscription_date IS NULL;
+-- There aren't any null values in key columns
+
+-- What distinct plan names exist?
+SELECT DISTINCT
+	plan_name
+FROM plans;
+-- The plan names are Free, Starter, Growth, and Enterprise
+
+-- What is the price range for subscriptions?
+SELECT
+    MIN(monthly_price_usd) AS lowest_priced_plan,
+    MAX(monthly_price_usd) AS highest_priced_plan
+FROM plans;
+-- Plans range from free to $100 per month
