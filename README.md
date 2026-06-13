@@ -1,13 +1,16 @@
-# SaaS Analytics
-Analysis includes a Subscriptions Revenue & Growth Dashboard that shows:
-* Active users
-* Current revenue
-* Average revenue per user
-* Monthly recurring revenue
-* Monthly recurring revenue by subscription plan
-* Interactivity to filter by month/year, subscription plan, or acquisition channel
+# SaaS Analysis
 
-Additional reporting on churn risk and cohort retention is included.
+## Project Overview
+This music streaming company relies on subscriptions for revenue. Analyzing customer engagement and retention over time is a key aspect of projecting growth and evaluating the success of implemented features and updates. 
+
+## Objective
+Evaluate the effectiveness of the new *Collaborative Playlist* feature by evaluating customer engagement from launch through two years. 
+
+##Key Questions
+* Did the “Collaborative Playlist” feature (approximated by early upgrade) increase
+retention?
+* Which user segment has the highest churn risk, and what recommendations can be made to increase engagement for those users?
+* What is the current MRR growth trend? Is it accelerating or slowing?
 
 ## Tools used
 * SQL
