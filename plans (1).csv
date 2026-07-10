@@ -1,0 +1,5 @@
+plan_id,plan_name,monthly_price_usd
+1,Free,0
+2,Starter,20
+3,Growth,50
+4,Enterprise,100
